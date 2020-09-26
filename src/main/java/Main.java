@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
+        int sleepTime = 12000;
         System.out.println("Создаю потоки");
         ThreadGroup mainGroup = new ThreadGroup("main group");
         Thread thread1 = new MyThread(mainGroup, "1");
@@ -13,7 +14,7 @@ public class Main {
         thread3.start();
         thread4.start();
 
-        Thread.sleep(15000);
+        Thread.sleep(sleepTime);
         System.out.println("Завершаю все потоки");
         mainGroup.interrupt();
     }
